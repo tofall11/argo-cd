@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tofall11/argo-cd.git
-    path: applications
+    path: applications/root-app
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
