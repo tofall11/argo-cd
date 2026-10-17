@@ -12,7 +12,8 @@ spec:
     targetRevision: 11.4.28
     helm:
       values: |
-        image.repository: docker.io/library/httpd
+        image.registry: docker.io
+        image.repository: library/httpd
         image.tag: trixie
   destination:
     server: https://kubernetes.default.svc
