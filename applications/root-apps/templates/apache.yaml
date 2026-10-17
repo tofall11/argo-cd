@@ -12,6 +12,8 @@ spec:
     targetRevision: 11.4.28
     helm:
       values: |
+        service:
+          type: NodePort
         image:
           repository: bitnamilegacy/apache
         global:
