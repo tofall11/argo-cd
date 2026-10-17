@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://charts.bitnami.com/bitnami
     chart: apache
-    targetRevision: 11.4.29
+    targetRevision: 11.4.28
   destination:
     server: https://kubernetes.default.svc
     namespace: apache
