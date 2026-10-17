@@ -13,7 +13,7 @@ spec:
     helm:
       values: |
         image:
-          tag: latest
+          repository: bitnamilegacy/apache
         global:
           security:
             allowInsecureImages: true
