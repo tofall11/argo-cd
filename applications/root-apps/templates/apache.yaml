@@ -15,6 +15,7 @@ spec:
         image.registry: docker.io
         image.repository: library/httpd
         image.tag: trixie
+        global.security.allowInsecureImages: true
   destination:
     server: https://kubernetes.default.svc
     namespace: apache
