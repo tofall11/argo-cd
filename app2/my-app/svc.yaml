@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-  name: my-app-svc
+  name: my-app-svc2
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    app: my-app
+    app: my-app2
 status:
   loadBalancer: {}
