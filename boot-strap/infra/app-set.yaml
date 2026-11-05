@@ -9,7 +9,7 @@ spec:
   generators:
   - git:
       repoURL: https://github.com/tofall11/argo-cd.git
-      revision: HEAD
+      revision: test-branch
       directories:
       - path: apps/*
   template:
@@ -18,13 +18,22 @@ spec:
     spec:
       project: "my-project"
       source:
-        repoURL: //github.com/tofall11/argo-cd.git
-        targetRevision: HEAD
+        repoURL: https://github.com/tofall11/argo-cd.git
+        targetRevision: test-branch
         path: 'apps/{{.path.basename}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{.path.basename}}'
       syncPolicy:
+        automated:
+          prune: true        
+          enabled: true
+          selfHeal: true
         syncOptions:
         - CreateNamespace=true
-
+        - RespectIgnoreDifferences=true          
+      ignoreDifferences:
+        - group: 'apps'
+          kind: 'Deployment'
+          jsonPointers:
+            - /spec/replicas

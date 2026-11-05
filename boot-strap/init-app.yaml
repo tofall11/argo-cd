@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: initial-cluster
+  namespace: argocd
+spec:
+  project: default
+  source:
+    path: boot-strap/infra
+    repoURL: https://github.com/tofall11/argo-cd.git
+    targetRevision: test-branch
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: system
